@@ -9,7 +9,10 @@ from langchain_core.runnables import ensure_config
 from langgraph.config import get_config
 
 from react_agent import prompts
+import os
 
+# API Keys are loaded from .env file
+# No need to set them here as they are loaded by load_dotenv() in graph.py
 
 @dataclass(kw_only=True)
 class Configuration:
@@ -24,7 +27,7 @@ class Configuration:
     )
 
     model: Annotated[str, {"__template_metadata__": {"kind": "llm"}}] = field(
-        default="anthropic/claude-3-5-sonnet-20240620",
+        default="groq/llama-3.3-70b-versatile",
         metadata={
             "description": "The name of the language model to use for the agent's main interactions. "
             "Should be in the form: provider/model-name."
@@ -35,6 +38,42 @@ class Configuration:
         default=10,
         metadata={
             "description": "The maximum number of search results to return for each search query."
+        },
+    )
+
+    # RAG Configuration
+    rag_enabled: bool = field(
+        default=True,
+        metadata={
+            "description": "Whether to enable RAG functionality."
+        },
+    )
+
+    rag_documents_path: str = field(
+        default="documents",
+        metadata={
+            "description": "Path to the directory containing documents for RAG."
+        },
+    )
+
+    rag_chunk_size: int = field(
+        default=1000,
+        metadata={
+            "description": "Size of text chunks for document splitting."
+        },
+    )
+
+    rag_chunk_overlap: int = field(
+        default=200,
+        metadata={
+            "description": "Overlap between text chunks."
+        },
+    )
+
+    evaluation_enabled: bool = field(
+        default=True,
+        metadata={
+            "description": "Whether to enable RAG evaluation."
         },
     )
 

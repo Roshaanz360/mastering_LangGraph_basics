@@ -1,0 +1,89 @@
+{
+  "evaluation_dataset": {
+    "description": "Predefined questions and ground truths for Enhanced RAG Agent evaluation",
+    "version": "1.0",
+    "created": "2024-01-01",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is reward hacking in AI systems?",
+        "ground_truth": "Reward hacking occurs when an AI system finds unexpected ways to maximize its reward function that don't align with the intended behavior. The system exploits loopholes or unintended aspects of the reward specification to achieve high rewards without actually accomplishing the desired task.",
+        "category": "AI Safety",
+        "difficulty": "medium",
+        "expected_sources": ["reHack.txt"]
+      },
+      {
+        "id": 2,
+        "question": "How can we prevent hallucination in language models?",
+        "ground_truth": "Hallucination in language models can be prevented through several techniques: grounding responses in reliable source documents, implementing verification mechanisms, using retrieval-augmented generation (RAG), fact-checking against knowledge bases, and training with better data quality and human feedback.",
+        "category": "AI Safety",
+        "difficulty": "medium",
+        "expected_sources": ["hallu.txt"]
+      },
+      {
+        "id": 3,
+        "question": "What are the main differences between supervised and unsupervised learning?",
+        "ground_truth": "Supervised learning uses labeled training data to learn mappings from inputs to outputs, while unsupervised learning finds patterns in data without labels. Supervised learning includes classification and regression tasks, while unsupervised learning includes clustering, dimensionality reduction, and association rule learning.",
+        "category": "Machine Learning",
+        "difficulty": "easy",
+        "expected_sources": ["sample_data.txt"]
+      },
+      {
+        "id": 4,
+        "question": "Explain the concept of artificial intelligence safety and alignment",
+        "ground_truth": "AI safety and alignment focus on ensuring that AI systems behave safely and in accordance with human values and intentions. This includes preventing harmful behaviors, ensuring systems remain controllable, and aligning AI objectives with human welfare. Key challenges include value alignment, robustness, and maintaining human oversight.",
+        "category": "AI Safety",
+        "difficulty": "hard",
+        "expected_sources": ["reHack.txt", "hallu.txt"]
+      },
+      {
+        "id": 5,
+        "question": "What is the difference between overfitting and underfitting in machine learning?",
+        "ground_truth": "Overfitting occurs when a model learns the training data too well, including noise and irrelevant patterns, leading to poor generalization on new data. Underfitting happens when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test data.",
+        "category": "Machine Learning",
+        "difficulty": "easy",
+        "expected_sources": ["sample_data.txt"]
+      },
+      {
+        "id": 6,
+        "question": "How do neural networks learn through backpropagation?",
+        "ground_truth": "Backpropagation is an algorithm for training neural networks that works by calculating gradients of the loss function with respect to each weight by applying the chain rule of calculus. It propagates error signals backward through the network, updating weights to minimize the loss function through gradient descent.",
+        "category": "Deep Learning",
+        "difficulty": "medium",
+        "expected_sources": ["sample_data.txt"]
+      },
+      {
+        "id": 7,
+        "question": "What are the ethical considerations in AI development?",
+        "ground_truth": "Ethical considerations in AI development include fairness and bias prevention, privacy protection, transparency and explainability, accountability for AI decisions, safety and security, job displacement concerns, and ensuring AI benefits are distributed equitably across society.",
+        "category": "AI Ethics",
+        "difficulty": "medium",
+        "expected_sources": ["diff.txt", "hallu.txt"]
+      },
+      {
+        "id": 8,
+        "question": "What is transfer learning and when is it useful?",
+        "ground_truth": "Transfer learning is a technique where a model trained on one task is adapted for a related task. It's useful when you have limited data for the target task, want to reduce training time, or when the source and target tasks share similar features. Common approaches include fine-tuning pre-trained models.",
+        "category": "Machine Learning",
+        "difficulty": "medium",
+        "expected_sources": ["sample_data.txt"]
+      },
+      {
+        "id": 9,
+        "question": "How do attention mechanisms work in transformer models?",
+        "ground_truth": "Attention mechanisms in transformers allow the model to focus on different parts of the input sequence when processing each element. Self-attention computes relationships between all positions in a sequence, enabling parallel processing and capturing long-range dependencies more effectively than recurrent networks.",
+        "category": "Deep Learning",
+        "difficulty": "hard",
+        "expected_sources": ["sample_data.txt"]
+      },
+      {
+        "id": 10,
+        "question": "What are the key challenges in deploying AI systems in production?",
+        "ground_truth": "Key challenges include model drift and performance degradation over time, scalability and latency requirements, data quality and pipeline management, monitoring and observability, security and privacy concerns, regulatory compliance, and maintaining model interpretability and fairness in production environments.",
+        "category": "AI Engineering",
+        "difficulty": "hard",
+        "expected_sources": ["diff.txt", "sample_data.txt"]
+      }
+    ]
+  }
+} 

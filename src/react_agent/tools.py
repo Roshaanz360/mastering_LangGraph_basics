@@ -15,11 +15,11 @@ from react_agent.state import State
 from langgraph.prebuilt import ToolNode  # ✅ Required for tool execution
 
 
-async def search(query: str) -> Optional[dict[str, Any]]:
-    """Search for general web results."""
+async def search(query: str) -> dict:
+    """Search the web for the given query using Tavily."""
     configuration = Configuration.from_context()
     wrapped = TavilySearch(max_results=configuration.max_search_results)
-    return cast(dict[str, Any], await wrapped.ainvoke({"query": query}))
+    return await wrapped.ainvoke({"query": query})
 
 
 # ✅ Wrapper to add logging, human review, etc.
@@ -30,4 +30,4 @@ async def tools_wrapper(state: State):
 
 
 # These are the actual tool functions
-TOOLS: List[Callable[..., Any]] = [search]
+TOOLS = [search]
